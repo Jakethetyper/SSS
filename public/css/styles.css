@@ -1,0 +1,161 @@
+ul {
+    list-style-type: none;
+}
+
+.container.xl {
+    max-width: 800px;
+}
+
+body {
+    background-image: url(/img/background.avif);
+    background-size: cover;
+    background-repeat: none;
+}
+:root {
+    --bs-font-sans-serif: "Rubik", sans-serif;
+}
+
+a { 
+    text-decoration: none;
+    color: var(--bs-dark)
+};
+
+
+/* home */
+
+.index {
+    justify-content: center;
+    align-items: center;
+}
+
+.maingroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3%;
+}
+
+h1 {
+    width: 85%;
+    color: whitesmoke;
+}
+
+.bio {
+    width: 85%;
+    color: rgb(94, 114, 98);
+}
+
+.groupImg {
+    width: 80%;
+    margin: 2% 0;
+    border-radius: 3%;
+}
+
+/* Player Card */
+
+h2 {
+    color: rgb(255, 174, 0);
+    text-align: center;
+}
+
+.cardHolder {
+    border-right: 1px solid rgb(206, 206, 206);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.playerCard {
+    width: 50%;
+    margin: 2%;
+    transition: all .2s ease-in-out;
+}
+
+.playerCard:hover {
+    transform: scale(2.5);
+}
+
+.team {
+    width: 100%;
+}
+
+.teams {
+    color: white;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.teamSelect {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10%;
+    padding: 4%;
+    grid-template-rows: auto;
+    align-items: center;
+    justify-items: center;
+}
+
+.teamImg {
+    width: 60%;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.buttons {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+/* history */
+
+.historyHeader {
+    width: 100%;
+    text-align: center;
+}
+h5 {
+    text-align: center;
+    color: aliceblue;
+    text-decoration: underline;
+    margin: 2vh;
+}
+p {
+    color: rgb(220, 245, 237);
+    margin: 5%;
+}
+
+.championImgs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10%;
+    margin: 2%;
+    padding: 2%;
+}
+
+.score {
+    display: flex;
+      width: 100%;
+}
+
+.Champions {
+    width: 100%;
+}
+.Conquer {
+    text-align: center;
+    margin: 1%;
+}
+
+.chmpImg {
+    display: flex;
+    width: 100%;
+    gap: 5%;
+    height: 380px;
+}
+
+.kingMe {
+    width: auto;
+    height: 100%;
+}
