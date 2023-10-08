@@ -1,0 +1,10 @@
+version: 1
+services:
+  - name: SuperStrokers
+    source:
+      type: image
+      image: node:18 # Replace with your desired Node.js version
+    build:
+      commands:
+        - npm install
+    startCommand: npm start
