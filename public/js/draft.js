@@ -8,12 +8,15 @@ const imageElements = [
     document.getElementById('5'),
     document.getElementById('6'),
     document.getElementById('7'),
-    document.getElementById('8')
+    document.getElementById('8'),
+    document.getElementById('9'),
+    document.getElementById('10')
 ];
 
 const people = [
     "/img/jake.jpg", "/img/david.jpg", "/img/kev.jpg", "/img/alex.jpg", 
-    "/img/isaac.jpg", "/img/jared.jpg", "/img/ben.jpg", "/img/logan.jpg"
+    "/img/isaac.jpg", "/img/jared.jpg", "/img/ben.jpg", "/img/logan.jpg",
+    "/img/matt.jpg", "/img/larry.jpg"
 ];
 
 draft.addEventListener('click', () => {
@@ -21,7 +24,7 @@ draft.addEventListener('click', () => {
     
     // Function to update the image with a delay
     function updateImageWithDelay(index) {
-        if (index >= 8) return; // Exit the loop when done
+        if (index >= 10) return; // Exit the loop when done
         let randomNumber = Math.floor(Math.random() * newDraft.length);
         imageElements[index].src = newDraft[randomNumber];
         newDraft.splice(randomNumber, 1);
@@ -35,7 +38,7 @@ draft.addEventListener('click', () => {
 });
 
 clear.addEventListener('click', () => {
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < 10; i++) {
         imageElements[i].src = "";
     }
 });
