@@ -197,6 +197,12 @@ p {
     width: 13vw;
 }
 
+@media (max-width: 800px) {
+    .playerTourn{
+        width: 30vw;
+    }
+}
+
 .teamFlex {
     display: flex;
     align-items: center;
