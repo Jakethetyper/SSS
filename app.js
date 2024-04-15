@@ -4,7 +4,7 @@ const fileUpload = require("express-fileupload");
 const flash = require("connect-flash");
 
 const app = express();
-const port = process.env.Port || 2500;
+const port = process.env.PORT || 2500;
 
 require("dotenv").config();
 
@@ -18,8 +18,6 @@ app.set("view engine", "ejs");
 const routes = require("./server/routes/golfLinks.js");
 
 app.use("/", routes);
-app.use(flash());
-app.use(fileUpload());
 
 app.get("/", (req, res) => {
   res.send("Hello Express!");
