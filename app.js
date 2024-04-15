@@ -17,10 +17,6 @@ const routes = require("./server/routes/golfLinks.js");
 
 app.use("/", routes);
 
-app.get("/", (req, res) => {
-  res.send("Hello Express!");
-});
-
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
