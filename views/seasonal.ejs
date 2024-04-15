@@ -1,0 +1,83 @@
+<div class="seasonal">
+  <h1 class="seasonH1">2024 Super Strokers Seasonal Standings</h1>
+  <div class="leaderboard">
+    <ul class="listOfPlayers">
+      <li class="playerRows">Players</li>
+      <% players.forEach(function(user, index) { %>
+      <li class="playerRows"><%= user.name %></li>
+      <% }) %>
+    </ul>
+    <ul class="holeHolder">
+      <% for(i=1; i<=54; i++) { %>
+      <li class="hole"><%= i %></li>
+      <% } %> <% players.forEach(function(user, index) { %> <% for(i=0; i < 54
+      -user.scores.length; i++) { %> <% if(i < user.scores.length) { %>
+      <li class="hole"><%= user.scores[i] %></li>
+      <% } else { %>
+      <li class="hole">-</li>
+      <% }}}) %>
+    </ul>
+    <ul class="textBox">
+      <li class="total">Total</li>
+      <% players.forEach(function(user, index) { %>
+      <li class="totalities"><%= user.total %></li>
+      <%}) %>
+    </ul>
+  </div>
+  <div class="forms">
+    <button class="btn btn-primary" id="addUser">Register</button>
+    <button class="btn btn-primary" id="addScore">Add Round</button>
+  </div>
+  <form action="/addUser" method="POST" id="form" class="display-none">
+    <div class="exitOut">X</div>
+    <label for="name">Name:</label>
+    <input type="text" class="form-control" id="name" name="name" />
+    <label>Password:</label>
+    <input type="text" class="form-control" id="password" name="password" />
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <form action="/addScores" method="POST" id="scores" class="display-none">
+    <div class="exitOut" id="option2">X</div>
+    <ul class="roundInput">
+      <li class="inputHole">
+        <label for="one" class="holeInput">1</label>
+        <input type="number" name="one" id="one" class="inputScore" />
+      </li>
+      <li class="inputHole">
+        <label for="two" class="holeInput">2</label>
+        <input type="number" name="two" id="two" class="inputScore" />
+      </li>
+      <li class="inputHole">
+        <label for="three" class="holeInput">3</label>
+        <input type="number" name="three" id="three" class="inputScore" />
+      </li>
+      <li class="inputHole">
+        <label for="four" class="holeInput">4</label>
+        <input type="number" name="four" id="four" class="inputScore" />
+      </li>
+      <li class="inputHole">
+        <label for="five" class="holeInput">5</label>
+        <input type="number" name="five" id="five" class="inputScore" />
+      </li>
+      <li class="inputHole">
+        <label for="six" class="holeInput">6</label>
+        <input type="number" name="six" id="six" class="inputScore" />
+      </li>
+      <li class="inputHole">
+        <label for="seven" class="holeInput">7</label>
+        <input type="number" name="seven" id="seven" class="inputScore" />
+      </li>
+      <li class="inputHole">
+        <label for="eight" class="holeInput">8</label>
+        <input type="number" name="eight" id="eight" class="inputScore" />
+      </li>
+      <li class="inputHole">
+        <label for="nine" class="holeInput">9</label>
+        <input type="number" name="nine" id="nine" class="inputScore" />
+      </li>
+    </ul>
+    <label>Password:</label>
+    <input type="text" class="form-control" id="password2" name="password2" />
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
