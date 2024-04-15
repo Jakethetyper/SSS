@@ -55,7 +55,7 @@ exports.addScores = async (req, res) => {
       req.body;
 
     const user = await Scores.findOne({ password: password2 });
-    const players = await Scores.find();
+    let players = await Scores.find();
     // Validate inputs
     const inputs = [one, two, three, four, five, six, seven, eight, nine];
     if (
@@ -81,7 +81,9 @@ exports.addScores = async (req, res) => {
 
     await user.save();
 
-    res.render("seasonal", { players: [user] });
+    players = await Scores.find();
+
+    res.render("seasonal", { players });
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");

@@ -229,6 +229,7 @@ p {
 
 .seasonH1 {
     width: fit-content;
+    text-align: center;
 }
 
 .leaderboard {
@@ -407,4 +408,16 @@ label {
     height: 35px;
     text-align: center;
     align-content: center;
+}
+
+@media (max-width: 720px){
+    .holeHolder {
+        width: 70%;
+    }
+    .listOfPlayers{
+        width: 18%;
+    }
+    .textBox {
+        width: 12%;
+    }
 }
