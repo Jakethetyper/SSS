@@ -10,8 +10,8 @@
     <ul class="holeHolder">
       <% for(i=1; i<=54; i++) { %>
       <li class="hole"><%= i %></li>
-      <% } %> <% players.forEach(function(user, index) { %> <% for(i=0; i < 54
-      -user.scores.length; i++) { %> <% if(i < user.scores.length) { %>
+      <% } %> <% players.forEach(function(user, index) { %> <% for(i=0; i < 54 ;
+      i++) { %> <% if(i < user.scores.length) { %>
       <li class="hole"><%= user.scores[i] %></li>
       <% } else { %>
       <li class="hole">-</li>

@@ -412,12 +412,27 @@ label {
 
 @media (max-width: 720px){
     .holeHolder {
-        width: 70%;
+        width: 68%;
+        height: fit-content;
     }
     .listOfPlayers{
-        width: 18%;
+        width: 20%;
+        height: fit-content;
     }
     .textBox {
         width: 12%;
+        height: fit-content;
+    }
+    .playerRows {
+        height: 50px;
+    }
+    .hole {
+        height: 50px;
+    }
+    .total {
+        height: 50px;
+    }
+    .totalities{
+        height: 50px;
     }
 }
