@@ -410,6 +410,31 @@ label {
     align-content: center;
 }
 
+.rulesSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1%;
+    padding: 1%;
+}
+
+.rulesSection h1 {
+    font-size: xx-large;
+}
+
+.rules {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    gap: 10px;
+}
+
+.rule {
+    font-size: larger;
+    color: rgb(199, 199, 199);
+}
+
 @media (max-width: 720px){
     .holeHolder {
         width: 68%;
