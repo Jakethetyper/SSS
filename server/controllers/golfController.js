@@ -20,9 +20,22 @@ exports.tournament = async (req, res) => {
 exports.seasonal = async (req, res) => {
   try {
     let players = await Scores.find();
+
     if (players.length < 2) {
-      players.push["No players Registered"];
+      players = ["No players Registered"];
+    } else {
+      players.forEach((player) => {
+        if (player.thru !== 0) {
+          player.averageScore = player.total / player.thru;
+        } else {
+          player.averageScore = 0; // Set average score to 0 if thru is 0
+        }
+      });
+
+      // Sort players by average score in ascending order
+      players.sort((a, b) => a.averageScore - b.averageScore);
     }
+
     console.log(players);
     res.render("seasonal", { players });
   } catch (error) {
@@ -37,11 +50,21 @@ exports.addUser = async (req, res) => {
       name: req.body.name,
       password: req.body.password,
       total: 0,
+      thru: 0,
     });
 
     await newUser.save();
 
     let players = await Scores.find();
+    players.forEach((player) => {
+      if (player.thru !== 0) {
+        player.averageScore = player.total / player.thru;
+      } else {
+        player.averageScore = 0; // Set average score to 0 if thru is 0
+      }
+    });
+
+    players.sort((a, b) => a.averageScore - b.averageScore);
     res.render("seasonal", { players });
   } catch (error) {
     console.error(error);
@@ -77,6 +100,7 @@ exports.addScores = async (req, res) => {
     const total = newArray.reduce((acc, curr) => acc + curr, 0);
 
     user.total += total;
+    user.thru += 9;
     user.scores.push(...newArray);
 
     await user.save();

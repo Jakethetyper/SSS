@@ -23,6 +23,12 @@
       <li class="totalities"><%= user.total %></li>
       <%}) %>
     </ul>
+    <ul class="textBox2">
+      <li class="total2">Thru</li>
+      <% players.forEach(function(user, index) { %>
+      <li class="totalities2"><%= user.thru %></li>
+      <%}) %>
+    </ul>
   </div>
   <div class="forms">
     <button class="btn btn-primary" id="addUser">Register</button>

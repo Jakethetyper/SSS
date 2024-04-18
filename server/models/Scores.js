@@ -17,6 +17,10 @@ const scoresSchema = new mongoose.Schema({
     type: Number,
     required: "This field is required",
   },
+  thru: {
+    type: Number,
+    required: "This field is required",
+  },
 });
 
 module.exports = mongoose.model("Scores", scoresSchema);

@@ -255,6 +255,12 @@ p {
     width: 8%;
 }
 
+.textBox2 {
+    text-align: center;
+    align-content: center;
+    width: 8%;
+}
+
 .playerRows {
     width: 100%;
     border: 1px solid rgb(204, 207, 19);
@@ -381,6 +387,26 @@ label {
     background-color: white;
 }
 
+.total2 {
+    height: 35px;
+    width: 100%;
+    align-content: center;
+    text-align: center;
+    color: rgb(9, 87, 6);
+    border: 2px solid rgb(177, 21, 0);
+    background-color: white;
+}
+
+.totalities2 {
+    height: 35px;
+    width: 100%;
+    align-content: center;
+    text-align: center;
+    color: rgb(9, 87, 6);
+    border: 2px solid rgb(177, 21, 0);
+    background-color: white;
+}
+
 .roundInput {
     display: flex;
     padding: 0px;
@@ -458,6 +484,12 @@ label {
         height: 50px;
     }
     .totalities{
+        height: 50px;
+    }
+    .total2 {
+        height: 50px;
+    }
+    .totalities2{
         height: 50px;
     }
 }
