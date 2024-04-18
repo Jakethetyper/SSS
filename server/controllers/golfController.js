@@ -28,7 +28,7 @@ exports.seasonal = async (req, res) => {
         if (player.thru !== 0) {
           player.averageScore = player.total / player.thru;
         } else {
-          player.averageScore = 0; // Set average score to 0 if thru is 0
+          player.averageScore = 1000;
         }
       });
 
@@ -60,7 +60,7 @@ exports.addUser = async (req, res) => {
       if (player.thru !== 0) {
         player.averageScore = player.total / player.thru;
       } else {
-        player.averageScore = 0; // Set average score to 0 if thru is 0
+        player.averageScore = 1000; // Set average score to 0 if thru is 0
       }
     });
 
@@ -106,6 +106,17 @@ exports.addScores = async (req, res) => {
     await user.save();
 
     players = await Scores.find();
+
+    players.forEach((player) => {
+      if (player.thru !== 0) {
+        player.averageScore = player.total / player.thru;
+      } else {
+        player.averageScore = 1000; // Set average score to 0 if thru is 0
+      }
+    });
+
+    // Sort players by average score in ascending order
+    players.sort((a, b) => a.averageScore - b.averageScore);
 
     res.render("seasonal", { players });
   } catch (error) {
