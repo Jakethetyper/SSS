@@ -32,11 +32,9 @@ exports.seasonal = async (req, res) => {
         }
       });
 
-      // Sort players by average score in ascending order
       players.sort((a, b) => a.averageScore - b.averageScore);
     }
 
-    console.log(players);
     res.render("seasonal", { players });
   } catch (error) {
     console.error(error);
