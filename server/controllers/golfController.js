@@ -28,7 +28,7 @@ exports.seasonal = async (req, res) => {
         if (player.thru !== 0) {
           player.averageScore = ((player.total / player.thru) * 9).toFixed(0);
         } else {
-          player.averageScore = 1000;
+          player.averageScore = 100;
         }
       });
       players.sort((a, b) => a.averageScore - b.averageScore);
@@ -55,9 +55,9 @@ exports.addUser = async (req, res) => {
     let players = await Scores.find();
     players.forEach((player) => {
       if (player.thru !== 0) {
-        player.averageScore = player.total / player.thru;
+        player.averageScore = ((player.total / player.thru) * 9).toFixed(0);
       } else {
-        player.averageScore = 1000; // Set average score to 0 if thru is 0
+        player.averageScore = 100; // Set average score to 0 if thru is 0
       }
     });
 
