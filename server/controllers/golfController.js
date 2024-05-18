@@ -26,12 +26,11 @@ exports.seasonal = async (req, res) => {
     } else {
       players.forEach((player) => {
         if (player.thru !== 0) {
-          player.averageScore = player.total / player.thru;
+          player.averageScore = ((player.total / player.thru) * 9).toFixed(0);
         } else {
           player.averageScore = 1000;
         }
       });
-
       players.sort((a, b) => a.averageScore - b.averageScore);
     }
 

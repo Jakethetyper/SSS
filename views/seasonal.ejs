@@ -29,6 +29,12 @@
       <li class="totalities2"><%= user.thru %></li>
       <%}) %>
     </ul>
+    <ul class="textBox2">
+      <li class="total2">Avg</li>
+      <% players.forEach(function(user, index) { %>
+      <li class="totalities2"><%= user.averageScore %></li>
+      <%}) %>
+    </ul>
   </div>
   <div class="forms">
     <button class="btn btn-primary" id="addUser">Register</button>
